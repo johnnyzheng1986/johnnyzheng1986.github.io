@@ -103,5 +103,5 @@ theme: landscape
 # Deployment
 deploy:
   type: git
-  repository: https://github.com/johnnyzheng1986/johnnyzheng1986.github.io.git
+  repository: git@github.com/johnnyzheng1986/johnnyzheng1986.github.io.git
   branch: [main]
