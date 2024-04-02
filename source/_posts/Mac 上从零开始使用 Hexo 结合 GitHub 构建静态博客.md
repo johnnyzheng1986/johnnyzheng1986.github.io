@@ -88,6 +88,45 @@ hexo server
 
    如果你使用 HTTPS URL，确保你已经创建了一个个人访问令牌并保存好，然后在推送时输入你的 GitHub 用户名和个人访问令牌作为密码。
 
+### 第8步：编译
+
+内容推送到github上后，默认会使用Jekyll进行编译，但是经常会报错，可以改为下面方式。
+1. 在你的仓库中，前往 Settings > Pages > Source，并将 Source 改为 GitHub Actions。
+
+2. 在你的仓库中创建 .github/workflows/pages.yml 文件，并填入以下内容（将 16 替换为你的 Node.js 版本）：
+
+```yaml
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+  ```
+部署完成后，前往 https://username.github.io 查看网站。
+
+
 ### 第 8 步：自定义域名（可选）
 
 如果你想使用自定义域名，你需要在 `_config.yml` 文件中设置 `url` 和 `root` 选项，并在域名提供商处配置 DNS 记录。
