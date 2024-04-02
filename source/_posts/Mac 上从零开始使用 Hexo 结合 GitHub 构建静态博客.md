@@ -1,4 +1,4 @@
-以下是重新整理的步骤，指导你在 Mac 上安装 Homebrew，使用 Hexo 创建静态博客，并将其部署到 GitHub Pages：
+在 Mac 上安装 Homebrew，使用 Hexo 创建静态博客，并将其部署到 GitHub Pages：
 
 ### 第 1 步：在 Mac 上安装 Homebrew
 
