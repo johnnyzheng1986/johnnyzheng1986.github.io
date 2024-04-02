@@ -5,8 +5,9 @@
 打开 Mac 终端，并运行以下命令来安装 Homebrew：
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```
+参考:https://juejin.cn/post/7163546075242954766
 
 ### 第 2 步：安装 Node.js 和 npm
 
